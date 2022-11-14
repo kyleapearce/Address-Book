@@ -27,6 +27,8 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Zip Code</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -38,6 +40,8 @@
                             <td>{{ contact.email }}</td>
                             <td>{{ contact.phoneNumber }}</td>
                             <td>{{ contact.zipCode }}</td>
+                            <td>{{ contact.city }}</td>
+                            <td>{{ contact.state }}</td>
                             <td>
                                 <div class="btn-group" role="group">
                                     <!-- edit button that is connected to edit contact modal -->

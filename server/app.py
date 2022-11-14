@@ -10,7 +10,9 @@ CONTACTS = [
         'lastName': 'Pearce',
         'email': 'kylepearce56@gmail.com',
         'phoneNumber': '(847) 363-3373',
-        'zipCode': '80302'
+        'zipCode': '80302',
+        'city': '',
+        'state': ''
     },
     {
         'id': uuid.uuid4().hex,
@@ -18,7 +20,9 @@ CONTACTS = [
         'lastName': 'Decint',
         'email': 'sfd.2018@gmail.com',
         'phoneNumber': '(571) 236-8817',
-        'zipCode': '22003'
+        'zipCode': '22003',
+        'city': '',
+        'state': ''
     },
     {
         'id': uuid.uuid4().hex,
@@ -26,7 +30,9 @@ CONTACTS = [
         'lastName': 'Pearce',
         'email': 'krispearce@icloud.com',
         'phoneNumber': '(847) 772-5473',
-        'zipCode': '60060'
+        'zipCode': '60060',
+        'city': '',
+        'state': ''
     }
 ]
 
@@ -68,6 +74,7 @@ def all_contacts():
             'email': post_data.get('email'),
             'phoneNumber': post_data.get('phoneNumber'),
             'zipCode': post_data.get('zipCode')
+            # TODO: add API integration for city and state
         })
         response_object['message'] = 'Contact Added!'
     else:
@@ -90,6 +97,7 @@ def single_contact(contact_id):
             'email': post_data.get('email'),
             'phoneNumber': post_data.get('phoneNumber'),
             'zipCode': post_data.get('zipCode')
+            # TODO: add API integration for city and state
         })
         response_object['message'] = 'Contact updated!'
     if request.method == 'DELETE':
