@@ -62,7 +62,7 @@ def getCity(z):
     </CityStateLookupRequest>
     """
     # prepare xml string doc for query string
-    docString = requestXML.format(z)
+    docString = requestXML.format(z) # str.format(z) allows us to use a variable within the XML
     docString = docString.replace('\n', '').replace('\t', '')
     docString = urllib.parse.quote_plus(docString)
     # url with XML for City State Lookup Request
