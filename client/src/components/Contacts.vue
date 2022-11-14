@@ -113,9 +113,12 @@
                 <b-form-group id="form-zipCode-group"
                               label="Zip Code:"
                               label-for="form-zipCode-input">
+                    <!-- :formatter is used for input max length -->
                     <b-form-input id="form-zipCode-input"
                                   type="number"
+                                  :formatter="formatZip"
                                   v-model="addContactForm.zipCode"
+                                  v-mask="'#####'"
                                   required
                                   placeholder="Enter zip code">
                     </b-form-input>
@@ -180,9 +183,12 @@
                 <b-form-group id="form-zipCode-edit-group"
                               label="Zip Code:"
                               label-for="form-zipCode-edit-input">
+                    <!-- :formatter is used for input max length -->
                     <b-form-input id="form-zipCode-edit-input"
                                   type="number"
+                                  :formatter="formatZip"
                                   v-model="editContactForm.zipCode"
+                                  v-mask="'#####'"
                                   required
                                   placeholder="Enter zip code">
                     </b-form-input>
@@ -357,6 +363,10 @@ export default {
         onDeleteContact(contact) {
             this.removeContact(contact.id);
         },
+        // formatter prop method to format Zip Code
+        formatZip(n){
+            return String(n).substring(0,6)
+        }
     },
     // lifecycle hook that fetches contacts from back-end endpoint
     created() {

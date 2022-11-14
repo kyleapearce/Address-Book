@@ -27,11 +27,11 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
 1. Run the server-side Flask app using one terminal window:
 
     ```sh
-    > cd path/server
+    > cd [path]/server
     > py -3 -m venv venv
     > venv/Scripts/activate
-    (env)$ pip install -r req.txt
-    (env)$ python app.py
+    (venv)$ pip install -r req.txt
+    (venv)$ python app.py
     ```
 
     Navigate to [http://localhost:5000/contacts](http://localhost:5000/contacts)
@@ -39,7 +39,7 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
 1. Run the client-side Vue app in a different terminal window:
 
     ```sh
-    > cd path/client
+    > cd [path]/client
     > npm install
     > npm run serve
     ```
