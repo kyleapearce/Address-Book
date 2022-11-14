@@ -1,5 +1,4 @@
-
-import uuid
+import uuid # used for a unique identifier
 from flask import Flask, jsonify, request
 from flask_cors import CORS # to make cross-origin requests
 
@@ -42,7 +41,7 @@ app.config.from_object(__name__)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 
-# sanity check route
+# check route to ensure method works
 @app.route('/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
@@ -54,7 +53,9 @@ def remove_contact(contact_id):
             return True
     return False
 
-# route handler for contacts
+# route handlers for contacts
+# GET grabs data from backend
+# POST adds a new dataset from form
 @app.route('/contacts', methods=['GET', 'POST'])
 def all_contacts():
     response_object = {'status': 'success'}
@@ -73,6 +74,9 @@ def all_contacts():
         response_object['contacts'] = CONTACTS
     return jsonify(response_object)
 
+# different route handler for PUT and DELETE as they need a specific contact id
+# PUT edits and updates already existing data
+# DELETE (self explanatory but deletes contact and data from backend)
 @app.route('/contacts/<contact_id>', methods=['PUT', 'DELETE'])
 def single_contact(contact_id):
     response_object = {'status': 'success'}
@@ -93,6 +97,6 @@ def single_contact(contact_id):
         response_object['message'] = 'Contact Removed!'
     return jsonify(response_object)
 
-
+# calls app to run
 if __name__ == '__main__':
     app.run()

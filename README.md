@@ -47,7 +47,7 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
     Navigate to [http://localhost:8080](http://localhost:8080)
 
 ## 📫 Contact
-Cell: (847) 363-3373
-[Email (kylepearce56@gmail.com)](mailto:kylepearce56@gmail.com)
-[LinkedIn](https://www.linkedin.com/in/kyle-a-pearce/)
-[Github](https://github.com/kyleapearce/Portfolio)
+Cell: (847) 363-3373  
+[Email (kylepearce56@gmail.com)](mailto:kylepearce56@gmail.com)  
+[LinkedIn](https://www.linkedin.com/in/kyle-a-pearce/)  
+[Github](https://github.com/kyleapearce/Portfolio)  
