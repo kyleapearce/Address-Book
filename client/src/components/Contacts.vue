@@ -27,6 +27,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
                             <th scope="col">Zip Code</th>
+                            <th scope="col">Address</th>
                             <th scope="col">City</th>
                             <th scope="col">State</th>
                             <th></th>
@@ -40,6 +41,7 @@
                             <td>{{ contact.email }}</td>
                             <td>{{ contact.phoneNumber }}</td>
                             <td>{{ contact.zipCode }}</td>
+                            <td>{{ contact.address }}</td>
                             <td>{{ contact.city }}</td>
                             <td>{{ contact.state }}</td>
                             <td>
@@ -107,13 +109,21 @@
                                   v-model="addContactForm.phoneNumber"
                                   v-mask="'(###) ###-####'"
                                   required
-                                  placeholder="Enter Phone Number">
+                                  placeholder="Enter phone number">
+                    </b-form-input>
+                </b-form-group>
+                <b-form-group id="form-address-group"
+                              label="Address:"
+                              label-for="form-address-input">
+                    <b-form-input id="form-address-input"
+                                  type="text"
+                                  v-model="addContactForm.address"
+                                  placeholder="Enter address">
                     </b-form-input>
                 </b-form-group>
                 <b-form-group id="form-zipCode-group"
                               label="Zip Code:"
                               label-for="form-zipCode-input">
-                    <!-- :formatter is used for input max length -->
                     <b-form-input id="form-zipCode-input"
                                   type="number"
                                   v-model="addContactForm.zipCode"
@@ -179,6 +189,15 @@
                                   placeholder="Enter phone number">
                     </b-form-input>
                 </b-form-group>
+                <b-form-group id="form-address-edit-group"
+                              label="Address:"
+                              label-for="form-address-edit-input">
+                    <b-form-input id="form-address-edit-input"
+                                  type="text"
+                                  v-model="editContactForm.address"
+                                  placeholder="Enter address">
+                    </b-form-input>
+                </b-form-group>
                 <b-form-group id="form-zipCode-edit-group"
                               label="Zip Code:"
                               label-for="form-zipCode-edit-input">
@@ -200,6 +219,7 @@
             </b-form>
         </b-modal>
         <!-- delete modal to confirm deletion -->
+        <!-- TODO: delete modal was encountering errors so not complete -->
         <b-modal ref="deleteModal"
                  id="delete-modal"
                  title="Confirm Deletion"
@@ -231,6 +251,7 @@ export default {
                 lastName: '',
                 email: '',
                 phoneNumber: '',
+                address: '',
                 zipCode: '',
             },
             editContactForm: { // form data to edit contact
@@ -238,6 +259,7 @@ export default {
                 lastName: '',
                 email: '',
                 phoneNumber: '',
+                address: '',
                 zipCode: '',
             },
             message: '', // message to display on alerts
@@ -292,12 +314,14 @@ export default {
             this.addContactForm.lastName = '';
             this.addContactForm.email = '';
             this.addContactForm.phoneNumber = '';
+            this.addContactForm.address = '';
             this.addContactForm.zipCode = '';
             this.editContactForm.id = '',
             this.editContactForm.firstName = '';
             this.editContactForm.lastName = '';
             this.editContactForm.email = '';
             this.editContactForm.phoneNumber = '';
+            this.editContactForm.address = '';
             this.editContactForm.zipCode = '';
         },
         // called when user submits form successfully
@@ -309,6 +333,7 @@ export default {
                 lastName: this.addContactForm.lastName,
                 email: this.addContactForm.email,
                 phoneNumber: this.addContactForm.phoneNumber,
+                address: this.addContactForm.address,
                 zipCode: this.addContactForm.zipCode,
             };
             this.addContact(payload);
@@ -330,6 +355,7 @@ export default {
                 lastName: this.editContactForm.lastName,
                 email: this.editContactForm.email,
                 phoneNumber: this.editContactForm.phoneNumber,
+                address: this.editContactForm.address,
                 zipCode: this.editContactForm.zipCode,
             };
             this.updateContact(payload, this.editContactForm.id);

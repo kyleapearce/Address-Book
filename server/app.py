@@ -14,6 +14,7 @@ CONTACTS = [
         'lastName': 'Pearce',
         'email': 'kylepearce56@gmail.com',
         'phoneNumber': '(847) 363-3373',
+        'address': '2121 Canyon Blvd., Apt. 415',
         'zipCode': '80302',
         'city': 'BOULDER',
         'state': 'CO'
@@ -24,6 +25,7 @@ CONTACTS = [
         'lastName': 'Decint',
         'email': 'sfd.2018@gmail.com',
         'phoneNumber': '(571) 236-8817',
+        'address': '3810 Pleasant Ridge Rd.',
         'zipCode': '22003',
         'city': 'ANNANDALE',
         'state': 'VA'
@@ -34,6 +36,7 @@ CONTACTS = [
         'lastName': 'Pearce',
         'email': 'krispearce@icloud.com',
         'phoneNumber': '(847) 772-5473',
+        'address': '1601 Surridge Ct.',
         'zipCode': '60060',
         'city': 'MUNDELEIN',
         'state': 'IL'
@@ -146,6 +149,7 @@ def all_contacts():
             'email': post_data.get('email'),
             'phoneNumber': post_data.get('phoneNumber'),
             'zipCode': post_data.get('zipCode'),
+            'address': post_data.get('address'),
             'city': getCity(post_data.get('zipCode')),
             'state': getState(post_data.get('zipCode'))
         })
@@ -170,6 +174,7 @@ def single_contact(contact_id):
             'email': post_data.get('email'),
             'phoneNumber': post_data.get('phoneNumber'),
             'zipCode': post_data.get('zipCode'),
+            'address': post_data.get('address'),
             'city': getCity(post_data.get('zipCode')),
             'state': getState(post_data.get('zipCode'))
         })

@@ -4,7 +4,7 @@
 
 This project is a single-page address book utilizing Vue.js as frontend framework and Flask to create a REST API as backend framework.
 In addition, the project utilizes a webservice integration to USPS for zip code lookup to get city and state.
-The Address Book utilizes Docker to start the services at the same time.  
+The Address Book utilizes Docker to start the services using a single command.  
   
 **Disclaimer:** *City State Lookup only works using a 5zip Zip Code.*
 
@@ -30,15 +30,15 @@ The Address Book utilizes Docker to start the services at the same time.
 1. Image the server-side folder using Docker:
 
     ```sh
-    > cd [path]/server
-    > docker build -f Dockerfile.server -t kyleapearce/docker-flask .
+    > cd [path]/Address-Book/server
+    > docker build -f Dockerfile.server -t docker-flask .
     ```
 
 1. Image the client-side folder using Docker:
 
     ```sh
-    > cd [path]/client
-    > docker build -f Dockerfile.client -t kyleapearce/docker-vuejs .
+    > cd [path]/Address-Book/client
+    > docker build -f Dockerfile.client -t docker-vuejs .
     ```
 
 1. Build and start the Docker Container:
@@ -47,8 +47,8 @@ The Address Book utilizes Docker to start the services at the same time.
     > docker-compose up
     ```
 
-    Navigate to [http://localhost:8080](http://localhost:8080)
-    Navigate to [http://localhost:5000/contacts](http://localhost:5000/contacts)
+    Navigate to [http://localhost:8080](http://localhost:8080) for the Application.  
+    Navigate to [http://localhost:5000/contacts](http://localhost:5000/contacts) for the data.
 
 ## Resources
 * [Creating a Vue App](https://vuejs.org/guide/essentials/application.html)
