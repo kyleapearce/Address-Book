@@ -2,8 +2,9 @@
 
 ## Description
 
-This project is a single-page address book utilizing Vue.js as frontend framework and Flask to create a REST API as backend framework. 
-In addition, the project utilizes a webservice integration to USPS for zip code lookup to get city and state.  
+This project is a single-page address book utilizing Vue.js as frontend framework and Flask to create a REST API as backend framework.
+In addition, the project utilizes a webservice integration to USPS for zip code lookup to get city and state.
+The Address Book utilizes Docker to start the services at the same time.  
   
 **Disclaimer:** *City State Lookup only works using a 5zip Zip Code.*
 
@@ -26,27 +27,28 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
 
 1. Clone
 
-1. Run the server-side Flask app using one terminal window:
+1. Image the server-side folder using Docker:
 
     ```sh
     > cd [path]/server
-    > py -3 -m venv venv
-    > venv/Scripts/activate
-    (venv)$ pip install -r req.txt
-    (venv)$ python app.py
+    > docker build -f Dockerfile.server -t kyleapearce/docker-flask .
     ```
 
-    Navigate to [http://localhost:5000/contacts](http://localhost:5000/contacts)
-
-1. Run the client-side Vue app in a different terminal window:
+1. Image the client-side folder using Docker:
 
     ```sh
     > cd [path]/client
-    > npm install
-    > npm run serve
+    > docker build -f Dockerfile.client -t kyleapearce/docker-vuejs .
+    ```
+
+1. Build and start the Docker Container:
+
+    ```sh
+    > docker-compose up
     ```
 
     Navigate to [http://localhost:8080](http://localhost:8080)
+    Navigate to [http://localhost:5000/contacts](http://localhost:5000/contacts)
 
 ## Resources
 * [Creating a Vue App](https://vuejs.org/guide/essentials/application.html)
@@ -54,6 +56,11 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
 * [USPS Web Tools API Documentation](https://www.usps.com/business/web-tools-apis/address-information-api.pdf)
 * [Developing Single-Page App with Flask and Vue.js](https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/)
 * [USPS Web Tools API in Python](https://www.youtube.com/watch?v=QYhQcsrOFXY)
+* [Docker Documentation](https://docs.docker.com/get-started/)
+* [Using Docker with Vue.js](https://www.middlewareinventory.com/blog/docker-vuejs/)
+* [Using Docker with Flask](https://www.freecodecamp.org/news/how-to-dockerize-a-flask-app/)
+* [Using Docker Compose](https://docs.docker.com/get-started/08_using_compose/)
+* [Building Vue App with Flask using Docker](https://www.section.io/engineering-education/how-to-build-a-vue-app-with-flask-sqlite-backend-using-docker/#dockerizing-the-application)
 
 ## 📫 Contact
 Cell: (847) 363-3373  

@@ -1,0 +1,13 @@
+version: '4.14.0'
+
+services:
+  server:
+    build: ./server
+    image: kyleapearce/docker-flask
+    ports:
+      - 5000:5000
+  client:
+    build: ./client
+    image: kyleapearce/docker-vuejs
+    ports:
+      - 8080:8080

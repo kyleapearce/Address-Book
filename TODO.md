@@ -4,7 +4,6 @@ Project has a working functionality but has elements for addition in the future.
 
 ### Todo
 
-- [ ] Docker Implementation
 - [ ] Usage of contact photos
 
 ### In Progress
@@ -36,3 +35,4 @@ Project has a working functionality but has elements for addition in the future.
 - [x] Parse docString into full API url
 - [x] Get contents of response and parse XML response
 - [x] Create getCity() and getState() to populate table with API response
+- [x] Docker Implementation

@@ -1,0 +1,16 @@
+# syntax=docker/dockerfile:1
+# init base image
+FROM python:3.9-slim-bullseye
+
+# make 'app' folder working directory
+WORKDIR /app
+
+# install dependencies
+COPY req.txt .
+RUN pip install -r req.txt
+
+# copy project files/folders to current working directory
+COPY . .
+
+EXPOSE 5000
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
