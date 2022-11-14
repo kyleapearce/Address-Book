@@ -173,7 +173,7 @@ def single_contact(contact_id):
             'city': getCity(post_data.get('zipCode')),
             'state': getState(post_data.get('zipCode'))
         })
-        response_object['message'] = 'Contact updated!'
+        response_object['message'] = 'Contact Updated!'
     if request.method == 'DELETE':
         remove_contact(contact_id)
         response_object['message'] = 'Contact Removed!'

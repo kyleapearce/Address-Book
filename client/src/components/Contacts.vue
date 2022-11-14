@@ -116,7 +116,6 @@
                     <!-- :formatter is used for input max length -->
                     <b-form-input id="form-zipCode-input"
                                   type="number"
-                                  :formatter="formatZip"
                                   v-model="addContactForm.zipCode"
                                   v-mask="'#####'"
                                   required
@@ -186,7 +185,6 @@
                     <!-- :formatter is used for input max length -->
                     <b-form-input id="form-zipCode-edit-input"
                                   type="number"
-                                  :formatter="formatZip"
                                   v-model="editContactForm.zipCode"
                                   v-mask="'#####'"
                                   required
@@ -198,6 +196,22 @@
                 <b-button-group>
                     <b-button type="submit" variant="primary">Apply Changes</b-button>
                     <b-button type="reset" variant="danger">Disgard Changes</b-button>
+                </b-button-group>
+            </b-form>
+        </b-modal>
+        <!-- delete modal to confirm deletion -->
+        <b-modal ref="deleteModal"
+                 id="delete-modal"
+                 title="Confirm Deletion"
+                 hide-footer>
+            <!-- <b-form> used to group contact info -->
+            <b-form @submit="onDeleteContact(contact)" @reset="onCancel" class="w-100">
+                <p> Are you sure you want to delete contact? </p>
+                <p><small> YOU CANNOT UNDO THIS CHANGE</small></p>
+                <br>
+                <b-button-group>
+                    <b-button type="submit" variant="danger">Confirm</b-button>
+                    <b-button type="reset" variant="secondary">Cancel</b-button>
                 </b-button-group>
             </b-form>
         </b-modal>
@@ -327,6 +341,22 @@ export default {
             this.initForm();
             this.getContacts();
         },
+        // delete Modal setter
+        //showDeleteModal(contact) {
+        //    this.$refs.deleteModal.show();
+        //    this.contact = contact
+        //},
+        // called when user clicks the delete button
+        // this then calls removeContact()
+        onDeleteContact(contact) {
+            this.removeContact(contact.id);
+        },
+        // same as onReset(evt) but using delete modal instead
+        onCancel(evt) {
+            evt.preventDefault();
+            this.$refs.deleteModal.hide();
+            this.getContacts();
+        },
         // same as addContact but uses the contactID to update backend accordingly
         updateContact(payload, contactID) {
             const path = `http://localhost:5000/contacts/${contactID}`;
@@ -358,15 +388,6 @@ export default {
                     this.getContacts();
                 });
         },
-        // called when user clicks the delete button
-        // this then calls removeContact()
-        onDeleteContact(contact) {
-            this.removeContact(contact.id);
-        },
-        // formatter prop method to format Zip Code
-        formatZip(n){
-            return String(n).substring(0,6)
-        }
     },
     // lifecycle hook that fetches contacts from back-end endpoint
     created() {

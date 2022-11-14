@@ -46,6 +46,13 @@ In addition, the project utilizes a webservice integration to USPS for zip code 
 
     Navigate to [http://localhost:8080](http://localhost:8080)
 
+## Resources
+* [Creating a Vue App](https://vuejs.org/guide/essentials/application.html)
+* [Flask Documentation](https://flask.palletsprojects.com/en/2.2.x/quickstart/)
+* [USPS Web Tools API Documentation](https://www.usps.com/business/web-tools-apis/address-information-api.pdf)
+* [Developing Single-Page App with Flask and Vue.js](https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/)
+* [USPS Web Tools API in Python](https://www.youtube.com/watch?v=QYhQcsrOFXY)
+
 ## 📫 Contact
 Cell: (847) 363-3373  
 [Email (kylepearce56@gmail.com)](mailto:kylepearce56@gmail.com)  
