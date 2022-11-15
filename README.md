@@ -4,7 +4,7 @@
 
 This project is a single-page address book utilizing Vue.js as frontend framework and Flask to create a REST API as backend framework.
 In addition, the project utilizes a webservice integration to USPS for zip code lookup to get city and state.
-The Address Book utilizes Docker to start the services using a single command.  
+The Address Book utilizes Docker to start the services using limited commands.  
   
 **Disclaimer:** *City State Lookup only works using a 5zip Zip Code.*
 

@@ -8,6 +8,7 @@ Project has a working functionality but has elements for addition in the future.
 
 ### In Progress
 
+- [ ] Address field not showing up anywhere
 - [ ] Contact Deletion Modal (encountered errors)
 - [ ] Dismissable Alert Countdown (encountered errors)
 

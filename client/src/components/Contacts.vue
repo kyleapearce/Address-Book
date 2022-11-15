@@ -16,7 +16,6 @@
                          {{ message }}
                 </b-alert>
                 <!-- Add Contact button connected to contact modal -->
-                <!-- TODO: add column for address and city/state -->
                 <button type="button" class="btn btn-success btn-sm" v-b-modal.contact-modal>Add Contact</button>
                 <br><br>
                 <table class="table table-hover" border="2px solid black">
@@ -26,10 +25,10 @@
                             <th scope="col">Last Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone Number</th>
-                            <th scope="col">Zip Code</th>
                             <th scope="col">Address</th>
                             <th scope="col">City</th>
                             <th scope="col">State</th>
+                            <th scope="col">Zip Code</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -40,10 +39,10 @@
                             <td>{{ contact.lastName }}</td>
                             <td>{{ contact.email }}</td>
                             <td>{{ contact.phoneNumber }}</td>
-                            <td>{{ contact.zipCode }}</td>
                             <td>{{ contact.address }}</td>
                             <td>{{ contact.city }}</td>
                             <td>{{ contact.state }}</td>
+                            <td>{{ contact.zipCode }}</td>
                             <td>
                                 <div class="btn-group" role="group">
                                     <!-- edit button that is connected to edit contact modal -->
