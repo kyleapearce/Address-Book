@@ -295,7 +295,7 @@ export default {
                     this.getContacts();
                     this.message = 'Contact Added!';
                     this.showDismissibleAlert = true;
-                    this,dismissCountDown = this.dismissSecs
+                    this.dismissCountDown = this.dismissSecs
                 })
                 .catch((error) => {
                     // eslint-disable-next-line
@@ -390,7 +390,7 @@ export default {
                     this.getContacts();
                     this.message = 'Contact Updated!';
                     this.showDismissibleAlert = true;
-                    this,dismissCountDown = this.dismissSecs
+                    this.dismissCountDown = this.dismissSecs
                 })
                 .catch((error) => {
                     // eslint-disable-next-line

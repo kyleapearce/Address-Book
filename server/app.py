@@ -2,6 +2,8 @@ import uuid # used for a unique identifier
 from flask import Flask, jsonify, request
 from flask_cors import CORS # to make cross-origin requests
 
+#import os # used to get/set environment variables
+
 # next two imports are used for USPS API
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -53,18 +55,22 @@ app.config.from_object(__name__)
 # enable CORS
 CORS(app, resources={r'/*': {'origins': '*'}})
 
+#userid = '092NA0002149'
 
 # getCity helper using zip code lookup API
+# TODO IMNPORTANT change USERID to use environment variable instead of personal data
+# TODO use Yattag library to contrsuct XML
 def getCity(z):
     requestXML = """
     <?xml version="1.0"?>
-    <CityStateLookupRequest USERID="092NA0002149">
+    <CityStateLookupRequest USERID="">
         <ZipCode ID="0">
             <Zip5>{0}</Zip5>
         </ZipCode>
     </CityStateLookupRequest>
     """
     # prepare xml string doc for query string
+    # TODO Build as object not as string
     docString = requestXML.format(z) # str.format(z) allows us to use a variable within the XML
     docString = docString.replace('\n', '').replace('\t', '')
     docString = urllib.parse.quote_plus(docString)
@@ -90,7 +96,7 @@ def getCity(z):
 def getState(z):
     requestXML = """
     <?xml version="1.0"?>
-    <CityStateLookupRequest USERID="092NA0002149">
+    <CityStateLookupRequest USERID="">
         <ZipCode ID="0">
             <Zip5>{0}</Zip5>
         </ZipCode>

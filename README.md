@@ -27,6 +27,8 @@ The Address Book utilizes Docker to start the services using limited commands.
 
 1. Clone
 
+1. Add personal id for USPS lookup on line 66 and 99 in server/app.py
+
 1. Image the server-side folder using Docker:
 
     ```sh

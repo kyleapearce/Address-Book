@@ -5,9 +5,12 @@ Project has a working functionality but has elements for addition in the future.
 ### Todo
 
 - [ ] Usage of contact photos
+- [ ] Use Yattag library to construct XML
+- [ ] Research/Implement Nginx and Gmunicorn
 
 ### In Progress
 
+- [ ] Use environment variables for personal data
 - [ ] Contact Deletion Modal (encountered errors)
 - [ ] Dismissable Alert Countdown (encountered errors)
 
